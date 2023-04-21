@@ -10,3 +10,6 @@
 [submodule "ToDo"]
 	path = ToDo
 	url = https://github.com/ShiftSoftware/ToDo
+[submodule "TypeAuth"]
+	path = TypeAuth
+	url = https://github.com/ShiftSoftware/TypeAuth
