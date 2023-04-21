@@ -13,3 +13,6 @@
 [submodule "TypeAuth"]
 	path = TypeAuth
 	url = https://github.com/ShiftSoftware/TypeAuth
+[submodule "ShiftIdentity"]
+	path = ShiftIdentity
+	url = https://github.com/ShiftSoftware/ShiftIdentity
