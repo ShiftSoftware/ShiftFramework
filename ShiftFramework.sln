@@ -61,7 +61,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShiftIdentity.Model", "Shif
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShiftSoftware.ShiftIdentity.Dashboard.Blazor", "ShiftIdentity\ShiftSoftware.ShiftIdentity.Dashboard.Blazor\ShiftSoftware.ShiftIdentity.Dashboard.Blazor.csproj", "{5208BCDA-387E-4C26-BA5B-650803A758B1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShiftSoftware.ShiftIdentity.Dashboard.Blazor.Launcher", "ShiftIdentity\ShiftSoftware.ShiftIdentity.Dashboard.Blazor.Launcher\ShiftSoftware.ShiftIdentity.Dashboard.Blazor.Launcher.csproj", "{5D8957FF-6B27-475A-A32B-C0754FEA524C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Launcher", "ShiftIdentity\ShiftSoftware.ShiftIdentity.Dashboard.Blazor.Launcher\Launcher.csproj", "{5D8957FF-6B27-475A-A32B-C0754FEA524C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
