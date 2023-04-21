@@ -1,0 +1,3 @@
+[submodule "ShiftEntity"]
+	path = ShiftEntity
+	url = https://github.com/ShiftSoftware/ShiftEntity
