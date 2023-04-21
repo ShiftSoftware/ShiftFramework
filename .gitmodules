@@ -1,3 +1,6 @@
 [submodule "ShiftEntity"]
 	path = ShiftEntity
 	url = https://github.com/ShiftSoftware/ShiftEntity
+[submodule "ShiftBlazor"]
+	path = ShiftBlazor
+	url = https://github.com/ShiftSoftware/ShiftBlazor
