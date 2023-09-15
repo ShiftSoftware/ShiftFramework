@@ -17,22 +17,52 @@ steps:
    persistCredentials: true
    # condition: contains(variables['Build.SourceBranch'], 'refs/tags/release')
 
- - script: dotnet build TypeAuth/TypeAuth.Core --configuration release
-   displayName: 'dotnet build TypeAuth/TypeAuth.Core'
+ - script: dotnet build --configuration release
+   displayName: 'Build All Projects'
 
  - script: dotnet pack TypeAuth/TypeAuth.Core --configuration release --output $(Build.ArtifactStagingDirectory)
    displayName: 'dotnet pack'
 
- - script: dotnet build TypeAuth/TypeAuth.Blazor --configuration release
-   displayName: 'dotnet build TypeAuth/TypeAuth.Blazor'
-
  - script: dotnet pack TypeAuth/TypeAuth.Blazor --configuration release --output $(Build.ArtifactStagingDirectory)
    displayName: 'dotnet pack'
 
- - script: dotnet build TypeAuth/TypeAuth.AspNetCore --configuration release
-   displayName: 'dotnet build TypeAuth/TypeAuth.AspNetCore'
-
  - script: dotnet pack TypeAuth/TypeAuth.AspNetCore --configuration release --output $(Build.ArtifactStagingDirectory)
+   displayName: 'dotnet pack'
+
+ - script: dotnet pack ShiftFrameworkTestingTools/ShiftFrameworkTestingTools --configuration release --output $(Build.ArtifactStagingDirectory)
+   displayName: 'dotnet pack'
+
+ - script: dotnet pack ShiftIdentity/ShiftIdentity.AspNetCore --configuration release --output $(Build.ArtifactStagingDirectory)
+   displayName: 'dotnet pack'
+
+ - script: dotnet pack ShiftIdentity/ShiftIdentity.Blazor --configuration release --output $(Build.ArtifactStagingDirectory)
+   displayName: 'dotnet pack'
+
+ - script: dotnet pack ShiftIdentity/ShiftIdentity.Core --configuration release --output $(Build.ArtifactStagingDirectory)
+   displayName: 'dotnet pack'
+
+ - script: dotnet pack ShiftIdentity/ShiftIdentity.Dashboard.AspNetCore --configuration release --output $(Build.ArtifactStagingDirectory)
+   displayName: 'dotnet pack'
+
+ - script: dotnet pack ShiftIdentity/ShiftIdentity.Dashboard.Blazor --configuration release --output $(Build.ArtifactStagingDirectory)
+   displayName: 'dotnet pack'
+
+ - script: dotnet pack ShiftEntity/ShiftEntity.Core --configuration release --output $(Build.ArtifactStagingDirectory)
+   displayName: 'dotnet pack'
+
+ - script: dotnet pack ShiftEntity/ShiftEntity.CosmosDbReplication --configuration release --output $(Build.ArtifactStagingDirectory)
+   displayName: 'dotnet pack'
+
+ - script: dotnet pack ShiftEntity/ShiftEntity.EFCore --configuration release --output $(Build.ArtifactStagingDirectory)
+   displayName: 'dotnet pack'
+
+ - script: dotnet pack ShiftEntity/ShiftEntity.Model --configuration release --output $(Build.ArtifactStagingDirectory)
+   displayName: 'dotnet pack'
+
+ - script: dotnet pack ShiftEntity/ShiftEntity.Web --configuration release --output $(Build.ArtifactStagingDirectory)
+   displayName: 'dotnet pack'
+
+ - script: dotnet pack ShiftBlazor/ShiftBlazor --configuration release --output $(Build.ArtifactStagingDirectory)
    displayName: 'dotnet pack'
 
  - task: NuGetCommand@2
