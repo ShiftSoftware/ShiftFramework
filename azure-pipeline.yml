@@ -1,0 +1,43 @@
+trigger:
+ branches:
+    include:
+    - master
+ tags:
+    include:
+    - release*
+
+pool:
+  vmImage: ubuntu-latest
+  
+
+steps:
+
+ - checkout: self
+   submodules: true
+   persistCredentials: true
+   # condition: contains(variables['Build.SourceBranch'], 'refs/tags/release')
+
+ - script: dotnet build TypeAuth/TypeAuth.Core --configuration release
+   displayName: 'dotnet build TypeAuth/TypeAuth.Core'
+
+ - script: dotnet pack TypeAuth/TypeAuth.Core --configuration release --output $(Build.ArtifactStagingDirectory)
+   displayName: 'dotnet pack'
+
+ - script: dotnet build TypeAuth/TypeAuth.Blazor --configuration release
+   displayName: 'dotnet build TypeAuth/TypeAuth.Blazor'
+
+ - script: dotnet pack TypeAuth/TypeAuth.Blazor --configuration release --output $(Build.ArtifactStagingDirectory)
+   displayName: 'dotnet pack'
+
+ - script: dotnet build TypeAuth/TypeAuth.AspNetCore --configuration release
+   displayName: 'dotnet build TypeAuth/TypeAuth.AspNetCore'
+
+ - script: dotnet pack TypeAuth/TypeAuth.AspNetCore --configuration release --output $(Build.ArtifactStagingDirectory)
+   displayName: 'dotnet pack'
+
+ - task: NuGetCommand@2
+   inputs:
+    command: 'push'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
+    nuGetFeedType: 'external'
+    publishFeedCredentials: 'NuGet.org'

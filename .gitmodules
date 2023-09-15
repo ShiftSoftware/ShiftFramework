@@ -1,0 +1,15 @@
+[submodule "TypeAuth"]
+	path = TypeAuth
+	url = https://github.com/ShiftSoftware/TypeAuth
+[submodule "ShiftBlazor"]
+	path = ShiftBlazor
+	url = https://github.com/ShiftSoftware/ShiftBlazor
+[submodule "ShiftIdentity"]
+	path = ShiftIdentity
+	url = https://github.com/ShiftSoftware/ShiftIdentity
+[submodule "ShiftEntity"]
+	path = ShiftEntity
+	url = https://github.com/ShiftSoftware/ShiftEntity
+[submodule "ShiftFrameworkTestingTools"]
+	path = ShiftFrameworkTestingTools
+	url = https://github.com/ShiftSoftware/ShiftFrameworkTestingTools
