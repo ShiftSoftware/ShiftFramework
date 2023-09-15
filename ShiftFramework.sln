@@ -45,9 +45,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ShiftFrameworkTestingTools"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShiftFrameworkTestingTools", "ShiftFrameworkTestingTools\ShiftFrameworkTestingTools\ShiftFrameworkTestingTools.csproj", "{47DE2DAB-96D4-4ACE-8BA0-F6F70183A6EC}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AzurePipeline", "AzurePipeline", "{C7710AE7-CF1E-413F-85A0-22F77E057F3C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{C7710AE7-CF1E-413F-85A0-22F77E057F3C}"
 	ProjectSection(SolutionItems) = preProject
 		azure-pipeline.yml = azure-pipeline.yml
+		ShiftFrameworkGlobalSettings.props = ShiftFrameworkGlobalSettings.props
 	EndProjectSection
 EndProject
 Global
