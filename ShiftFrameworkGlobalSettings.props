@@ -1,5 +1,5 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <ShiftFrameworkVersion>2023.10.22.1</ShiftFrameworkVersion>
+    <ShiftFrameworkVersion>2023.10.23.1</ShiftFrameworkVersion>
   </PropertyGroup>
 </Project>
