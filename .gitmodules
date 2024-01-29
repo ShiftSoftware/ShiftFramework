@@ -13,3 +13,6 @@
 [submodule "ShiftFrameworkTestingTools"]
 	path = ShiftFrameworkTestingTools
 	url = https://github.com/ShiftSoftware/ShiftFrameworkTestingTools
+[submodule "ShiftTemplates"]
+	path = ShiftTemplates
+	url = https://github.com/ShiftSoftware/ShiftTemplates
