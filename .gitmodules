@@ -16,3 +16,6 @@
 [submodule "ShiftTemplates"]
 	path = ShiftTemplates
 	url = https://github.com/ShiftSoftware/ShiftTemplates
+[submodule "AzureFunctionsAspNetCoreAuthorization"]
+	path = AzureFunctionsAspNetCoreAuthorization
+	url = https://github.com/ShiftSoftware/AzureFunctionsAspNetCoreAuthorization

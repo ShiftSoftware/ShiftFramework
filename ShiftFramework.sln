@@ -57,6 +57,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ShiftTemplates", "ShiftTemp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShiftTemplates", "ShiftTemplates\ShiftTemplates.csproj", "{38EA7961-B5A5-4111-A65D-7FC6100E3C90}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AzureFunctionsAspNetCoreAuthorization", "AzureFunctionsAspNetCoreAuthorization", "{774C0586-5CDC-4E54-900C-C87334B90DDF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShiftSoftware.Azure.Functions.AspNetCore.Authorization", "AzureFunctionsAspNetCoreAuthorization\ShiftSoftware.Azure.Functions.AspNetCore.Authorization\ShiftSoftware.Azure.Functions.AspNetCore.Authorization.csproj", "{BBFF6FF1-12F0-482F-B102-FED2D2207A9E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -283,6 +287,18 @@ Global
 		{38EA7961-B5A5-4111-A65D-7FC6100E3C90}.Release|x64.Build.0 = Release|Any CPU
 		{38EA7961-B5A5-4111-A65D-7FC6100E3C90}.Release|x86.ActiveCfg = Release|Any CPU
 		{38EA7961-B5A5-4111-A65D-7FC6100E3C90}.Release|x86.Build.0 = Release|Any CPU
+		{BBFF6FF1-12F0-482F-B102-FED2D2207A9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBFF6FF1-12F0-482F-B102-FED2D2207A9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBFF6FF1-12F0-482F-B102-FED2D2207A9E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{BBFF6FF1-12F0-482F-B102-FED2D2207A9E}.Debug|x64.Build.0 = Debug|Any CPU
+		{BBFF6FF1-12F0-482F-B102-FED2D2207A9E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BBFF6FF1-12F0-482F-B102-FED2D2207A9E}.Debug|x86.Build.0 = Debug|Any CPU
+		{BBFF6FF1-12F0-482F-B102-FED2D2207A9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBFF6FF1-12F0-482F-B102-FED2D2207A9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBFF6FF1-12F0-482F-B102-FED2D2207A9E}.Release|x64.ActiveCfg = Release|Any CPU
+		{BBFF6FF1-12F0-482F-B102-FED2D2207A9E}.Release|x64.Build.0 = Release|Any CPU
+		{BBFF6FF1-12F0-482F-B102-FED2D2207A9E}.Release|x86.ActiveCfg = Release|Any CPU
+		{BBFF6FF1-12F0-482F-B102-FED2D2207A9E}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -306,6 +322,7 @@ Global
 		{8B7B2B1E-BFCF-4164-9BC9-7CBB56BC7671} = {6489D0AA-B15C-473C-AE4A-521223247D74}
 		{36EA04DA-6632-48B4-9367-7DF19AA5D3DB} = {43BA8F5F-30C8-4064-B666-89EAE7CF68BF}
 		{38EA7961-B5A5-4111-A65D-7FC6100E3C90} = {DA0EFC14-3E92-4D82-802D-DA92274C5613}
+		{BBFF6FF1-12F0-482F-B102-FED2D2207A9E} = {774C0586-5CDC-4E54-900C-C87334B90DDF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F8F8BA88-72AD-4566-A8DC-7273CA0EF733}
