@@ -74,12 +74,19 @@ steps:
  - script: dotnet pack ShiftTemplates --configuration Release --output $(Build.ArtifactStagingDirectory)
    displayName: 'pack ShiftTemplates'
 
+ - task: NuGetCommand@2
+   inputs:
+    command: 'push'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
+    nuGetFeedType: 'external'
+    publishFeedCredentials: 'NuGet.org'
+
  - script: dotnet pack AzureFunctionsAspNetCoreAuthorization/ShiftSoftware.Azure.Functions.AspNetCore.Authorization --configuration Release --output $(Build.ArtifactStagingDirectory)
    displayName: 'pack ShiftTemplates'
 
  - task: NuGetCommand@2
    inputs:
     command: 'push'
-    packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/ShiftSoftware.Azure.Functions.AspNetCore.Authorization.*.nupkg'
     nuGetFeedType: 'external'
     publishFeedCredentials: 'NuGet.org'
