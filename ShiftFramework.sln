@@ -47,6 +47,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{
 	ProjectSection(SolutionItems) = preProject
 		azure-pipeline.yml = azure-pipeline.yml
 		ShiftFrameworkGlobalSettings.props = ShiftFrameworkGlobalSettings.props
+		template-versions.ps1 = template-versions.ps1
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShiftIdentity.Data", "ShiftIdentity\ShiftIdentity.Data\ShiftIdentity.Data.csproj", "{8B7B2B1E-BFCF-4164-9BC9-7CBB56BC7671}"

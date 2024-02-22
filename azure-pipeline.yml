@@ -17,6 +17,11 @@ steps:
    persistCredentials: true
    # condition: contains(variables['Build.SourceBranch'], 'refs/tags/release')
 
+ - task: PowerShell@2
+   displayName: 'Replace Package Versions in template.json'
+   inputs:
+    filePath: 'template-versions.ps1'
+
  - script: dotnet build --configuration release
    displayName: 'Build All Projects'
 
