@@ -1,6 +1,7 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 	<PropertyGroup>
-		<ShiftFrameworkVersion>2024.02.22.1</ShiftFrameworkVersion>
-		<AzureFunctionsAspNetCoreAuthorizationVersion>0.0.4</AzureFunctionsAspNetCoreAuthorizationVersion>
+		<ShiftFrameworkVersion>2024.02.22.2</ShiftFrameworkVersion>
+		<TypeAuthVersion>1.5.0</TypeAuthVersion>
+		<AzureFunctionsAspNetCoreAuthorizationVersion>0.0.5</AzureFunctionsAspNetCoreAuthorizationVersion>
 	</PropertyGroup>
 </Project>
