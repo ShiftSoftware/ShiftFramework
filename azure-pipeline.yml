@@ -9,13 +9,14 @@ trigger:
 pool:
   vmImage: ubuntu-latest
   
+variables:
+- group: pipeline
 
 steps:
 
  - checkout: self
    submodules: true
    persistCredentials: true
-   # condition: contains(variables['Build.SourceBranch'], 'refs/tags/release')
 
  - task: PowerShell@2
    displayName: 'Replace Package Versions in template.json'
@@ -70,10 +71,10 @@ steps:
  - script: dotnet pack ShiftTemplates --configuration Release --output $(Build.ArtifactStagingDirectory)/Framework
    displayName: 'pack ShiftTemplates'
 
- - script: dotnet test TypeAuth\TypeAuth.Core.Tests
+ - script: dotnet test TypeAuth/TypeAuth.Core.Tests
    displayName: 'Test TypeAuth.Core'
 
- - script: dotnet test TypeAuth\TypeAuth.AspNetCore.Tests
+ - script: dotnet test TypeAuth/TypeAuth.AspNetCore.Tests
    displayName: 'Test TypeAuth.AspNetCore'
 
  - script: dotnet pack TypeAuth/TypeAuth.Core --configuration Release --output $(Build.ArtifactStagingDirectory)/TypeAuth
@@ -85,37 +86,34 @@ steps:
  - script: dotnet pack TypeAuth/TypeAuth.AspNetCore --configuration Release --output $(Build.ArtifactStagingDirectory)/TypeAuth
    displayName: 'pack TypeAuth.AspNetCore'
 
- - script: dotnet test AzureFunctionsAspNetCoreAuthorization\Tests
+ - task: FuncToolsInstaller@0
+   inputs:
+    version: 'latest'
+
+ - script: dotnet test AzureFunctionsAspNetCoreAuthorization/Tests
    displayName: 'Test Azure Functions AspNetCore Authorization'
 
  - script: dotnet pack AzureFunctionsAspNetCoreAuthorization/ShiftSoftware.Azure.Functions.AspNetCore.Authorization --configuration Release --output $(Build.ArtifactStagingDirectory)/AzureFunctionsAspNetCoreAuthorization
    displayName: 'pack Azure Functions AspNetCore Authorization'
 
+ - task: NuGetToolInstaller@1
+   inputs:
+    versionSpec: '6.9.1'
 
  - task: NuGetCommand@2
    displayName: 'Push TypeAuth Packages' 
    inputs:
-    command: 'push'
-    packagesToPush: '$(Build.ArtifactStagingDirectory)/TypeAuth/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/TypeAuth/**/*.symbols.nupkg'
-    nuGetFeedType: 'external'
-    publishFeedCredentials: 'NuGet.org'
-    allowPackageConflicts: true
-
+    command: 'custom'
+    arguments: 'push "$(Build.ArtifactStagingDirectory)/TypeAuth/**/*.nupkg" -Source https://api.nuget.org/v3/index.json -ApiKey $(ShiftSoftwareNugetApiKey) -SkipDuplicate'
 
  - task: NuGetCommand@2
    displayName: 'Push Azure Functions AspNetCore Authorization' 
    inputs:
-    command: 'push'
-    packagesToPush: '$(Build.ArtifactStagingDirectory)/AzureFunctionsAspNetCoreAuthorization/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/AzureFunctionsAspNetCoreAuthorization/**/*.symbols.nupkg'
-    nuGetFeedType: 'external'
-    publishFeedCredentials: 'NuGet.org'
-    allowPackageConflicts: true
-
+    command: 'custom'
+    arguments: 'push "$(Build.ArtifactStagingDirectory)/AzureFunctionsAspNetCoreAuthorization/**/*.nupkg" -Source https://api.nuget.org/v3/index.json -ApiKey $(ShiftSoftwareNugetApiKey) -SkipDuplicate'
 
  - task: NuGetCommand@2
    displayName: 'Push Framework Packages' 
    inputs:
-    command: 'push'
-    packagesToPush: '$(Build.ArtifactStagingDirectory)/Framework/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/Framework/**/*.symbols.nupkg'
-    nuGetFeedType: 'external'
-    publishFeedCredentials: 'NuGet.org'
+    command: 'custom'
+    arguments: 'push "$(Build.ArtifactStagingDirectory)/Framework/**/*.nupkg" -Source https://api.nuget.org/v3/index.json -ApiKey $(ShiftSoftwareNugetApiKey) -SkipDuplicate'
